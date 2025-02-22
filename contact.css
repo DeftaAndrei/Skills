@@ -1,0 +1,336 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('Contact.png');
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    padding-right: 150px;
+}
+
+.contact-container {
+    width: 40%;
+    max-width: 600px;
+    margin: 0;
+    padding: clamp(15px, 3vw, 30px);
+}
+
+/* Adăugăm stil pentru titlu */
+.contact-container h2 {
+    color: #0d1b3e; /* Albastru și mai închis */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forțăm două coloane */
+    gap: clamp(8px, 1.5vw, 15px);
+    width: 100%;
+}
+
+/* Adăugăm animații la hover mai smooth */
+.contact-btn {
+    padding: clamp(8px, 1.5vw, 15px);
+    font-size: clamp(12px, 1.2vw, 14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(0, 119, 181, 0.9); /* Adăugăm transparență */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efect de strălucire la hover */
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.contact-btn:hover::before {
+    left: 100%;
+}
+
+/* Culori specifice pentru fiecare buton cu transparență */
+.contact-btn[href^="tel:"] {
+    background-color: rgba(37, 211, 102, 0.9);
+}
+
+.contact-btn[href^="mailto:"] {
+    background-color: rgba(234, 67, 53, 0.9);
+}
+
+.contact-btn[href*="github"] {
+    background-color: rgba(23, 21, 21, 0.9);
+}
+
+.contact-btn[href*="linkedin"] {
+    background-color: rgba(0, 119, 181, 0.9);
+}
+
+/* Efecte hover îmbunătățite */
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn i {
+    font-size: clamp(16px, 1.5vw, 24px);
+}
+
+/* Actualizare Media Queries */
+@media screen and (min-width: 2560px) {
+    .contact-section {
+        padding-right: 200px;
+    }
+    
+    .contact-container {
+        width: 30%;
+        max-width: 800px;
+    }
+    
+    .contact-buttons {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding-top: 80px;
+    }
+    
+    .contact-buttons {
+        grid-template-columns: repeat(2, 1fr); /* Menține două coloane */
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .contact-section {
+        padding-bottom: 15px;
+    }
+    
+    .contact-container {
+        width: 60%;
+    }
+    
+    .contact-buttons {
+        gap: 8px;
+    }
+}
+
+/* Pentru televizoare și ecrane foarte mari */
+@media screen and (max-width: 1920px) {
+    .contact-section {
+        padding-right: 150px;
+    }
+    
+    .contact-container {
+        width: 35%;
+        max-width: 600px;
+    }
+}
+
+/* Pentru laptop-uri */
+@media screen and (max-width: 1366px) {
+    .contact-section {
+        padding-right: 100px;
+    }
+    
+    .contact-container {
+        width: 40%;
+        max-width: 500px;
+    }
+}
+
+/* Pentru tablete */
+@media screen and (max-width: 1024px) {
+    .contact-section {
+        padding-right: 50px;
+        padding-bottom: 30px;
+    }
+    
+    .contact-container {
+        width: 50%;
+        max-width: 400px;
+    }
+    
+    .contact-buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Pentru tablete mici și telefoane în landscape */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 20px;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    
+    .contact-container {
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .contact-buttons {
+        grid-template-columns: repeat(2, 1fr); /* Menține două coloane */
+        gap: 8px;
+    }
+    
+    .contact-btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* Pentru telefoane mobile */
+@media screen and (max-width: 480px) {
+    .contact-section {
+        padding: 15px;
+    }
+    
+    .contact-container {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .contact-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Pentru dispozitive cu ecran mic în landscape */
+@media screen and (max-height: 600px) {
+    .contact-section {
+        padding-bottom: 15px;
+    }
+    
+    .contact-container {
+        width: 60%;
+    }
+    
+    .contact-buttons {
+        gap: 8px;
+    }
+}
+
+/* Pentru aspect ratio-uri diferite */
+@media screen and (aspect-ratio: 21/9) {
+    .contact-section {
+        background-size: 100% auto;
+    }
+}
+
+@media screen and (aspect-ratio: 16/9) {
+    .contact-section {
+        background-size: contain;
+    }
+}
+
+/* Pentru notificări */
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Pentru mod întunecat */
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .contact-btn {
+    background-color: #555;
+}
+
+/* Pentru loading */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Adăugăm suport pentru prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .contact-btn {
+        transition: none;
+    }
+    
+    .contact-btn:hover {
+        transform: none;
+    }
+}
+
+/* Adăugăm suport pentru dark mode */
+@media (prefers-color-scheme: dark) {
+    .contact-section {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+

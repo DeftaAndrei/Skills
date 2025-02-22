@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-image: url('skills.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.skills-container {
+    max-width: 95%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    margin-top: 80px;
+}
+
+h2 {
+    color: #00ff00;
+    border-bottom: 2px solid #00cc00;
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+h3 {
+    color: #00dd00;
+    margin-top: 20px;
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.3);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li {
+    margin: 10px 0;
+    position: relative;
+}
+
+li::before {
+    content: ">";
+    color: #00ff00;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+.skill-description {
+    margin-bottom: 20px;
+}
+
+strong {
+    color: #00ff00;
+    text-shadow: 0 0 2px rgba(0, 255, 0, 0.3);
+}
+
+/* Stiluri specifice pentru tehnologiile menționate */
+.skill-description strong:is(:contains("HTML"), :contains("CSS"), :contains("JavaScript"), 
+                           :contains("Tkinter"), :contains("PyQt5"), 
+                           :contains("NumPy"), :contains("PyTorch"), 
+                           :contains("Matplotlib"), :contains("Pandas")) {
+    color: #000000;
+    text-shadow: none;
+}
+
+strong.tech-name {
+    color: #000000;
+    text-shadow: none;
+}
+
+.navigation-buttons {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.back-button, .cyber-boost {
+    pointer-events: auto;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.back-button:hover {
+    background-color: rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.cyber-boost {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    font-size: 1.2em;
+    transform-origin: top;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: dropDown 6s ease forwards;
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cyber-boost:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Pentru telefoane în mod landscape și tablete mici */
+@media screen and (min-width: 576px) {
+    body {
+        padding: 15px;
+    }
+    
+    .skills-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Pentru tablete */
+@media screen and (min-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    .skills-container {
+        max-width: 85%;
+        padding: 25px;
+    }
+    
+    .navigation-buttons {
+        padding: 0 20px;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Pentru laptopuri și desktop-uri */
+@media screen and (min-width: 992px) {
+    .skills-container {
+        max-width: 800px;
+        padding: 30px;
+    }
+    
+    .skill-description {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+    
+    .cyber-boost {
+        font-size: 1.5em;
+        padding: 20px 40px;
+    }
+}
+
+/* Pentru ecrane mari și TV */
+@media screen and (min-width: 1200px) {
+    .skills-container {
+        max-width: 1000px;
+        padding: 40px;
+    }
+    
+    h2 {
+        font-size: 2.5em;
+    }
+    
+    h3 {
+        font-size: 1.8em;
+    }
+    
+    .skill-description {
+        font-size: 1.2em;
+    }
+}
+
+/* Pentru ecrane foarte mari */
+@media screen and (min-width: 1600px) {
+    .skills-container {
+        max-width: 1200px;
+        padding: 50px;
+    }
+}
+
+/* Pentru orientare landscape pe mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .skills-container {
+        margin-top: 70px;
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+    
+    .skill-description {
+        margin-bottom: 10px;
+    }
+}
+
+/* Ajustări pentru butoane pe ecrane mici */
+@media screen and (max-width: 576px) {
+    .cyber-boost {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+    
+    .back-button {
+        left: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+}

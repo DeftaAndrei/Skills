@@ -1,0 +1,358 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('Future.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.top-nav {
+    background: linear-gradient(to bottom, 
+        rgba(0, 4, 40, 0.9) 0%,
+        rgba(0, 4, 40, 0.7) 80%,
+        rgba(0, 4, 40, 0) 100%);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: twinkle 4s infinite;
+}
+
+.stars:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 
+        2vw 3vh 0 0 rgba(255,255,255,0.7),
+        10vw 5vh 0 0 rgba(255,255,255,0.5),
+        15vw 8vh 0 0 rgba(255,255,255,0.6),
+        20vw 4vh 0 0 rgba(255,255,255,0.4),
+        25vw 6vh 0 0 rgba(255,255,255,0.7),
+        30vw 3vh 0 0 rgba(255,255,255,0.5),
+        35vw 7vh 0 0 rgba(255,255,255,0.6),
+        40vw 5vh 0 0 rgba(255,255,255,0.4),
+        45vw 4vh 0 0 rgba(255,255,255,0.7),
+        50vw 6vh 0 0 rgba(255,255,255,0.5),
+        55vw 3vh 0 0 rgba(255,255,255,0.6),
+        60vw 7vh 0 0 rgba(255,255,255,0.4),
+        65vw 5vh 0 0 rgba(255,255,255,0.7),
+        70vw 4vh 0 0 rgba(255,255,255,0.5),
+        75vw 6vh 0 0 rgba(255,255,255,0.6),
+        80vw 3vh 0 0 rgba(255,255,255,0.4),
+        85vw 7vh 0 0 rgba(255,255,255,0.7),
+        90vw 5vh 0 0 rgba(255,255,255,0.5),
+        95vw 4vh 0 0 rgba(255,255,255,0.6);
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 30px);
+    position: relative;
+    z-index: 2;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-button {
+    padding: clamp(10px, 2vw, 20px) clamp(20px, 4vw, 40px);
+    font-size: clamp(16px, 2.5vw, 24px);
+    background-color: #1a3a8f;
+    border: 2px solid #2950c5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.nav-button:hover {
+    background-color: #2962ff;
+    border-color: #4d7fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(41, 98, 255, 0.5);
+}
+
+.nav-button:nth-child(1) {
+    animation: slideFromLeft 2s ease-out forwards;
+}
+
+.nav-button:nth-child(2) {
+    animation: slideFromLeft 2s ease-out 0.2s forwards;
+}
+
+.nav-button:nth-child(3) {
+    animation: slideFromRight 2s ease-out 0.4s forwards;
+}
+
+.nav-button:nth-child(4) {
+    animation: slideFromRight 2s ease-out 0.6s forwards;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.content {
+    margin-top: clamp(80px, 10vh, 120px);
+    position: relative;
+    z-index: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 4, 40, 0.7);
+    z-index: 0;
+}
+
+.container {
+    max-width: min(90%, 800px);
+    margin: 0 auto;
+    padding: clamp(10px, 3vw, 20px);
+    color: white;
+}
+
+.about-section {
+    background-color: rgba(13, 19, 51, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+    line-height: 1.6;
+}
+
+.about-section h2 {
+    color: #4d7fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.about-section p {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.1em;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.about-section ul li {
+    color: #ffffff;
+    margin: 10px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.about-section ul li:before {
+    content: "▹";
+    color: #4d7fff;
+    position: absolute;
+    left: 0;
+}
+
+/* Media Queries - Actualizate pentru toate dispozitivele */
+
+/* Telefoane mici */
+@media screen and (max-width: 320px) {
+    .nav-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .about-section {
+        padding: 15px;
+    }
+    
+    .about-section h2 {
+        font-size: 1.5em;
+    }
+    
+    .about-section p {
+        font-size: 0.9em;
+    }
+}
+
+/* Telefoane medii */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    .nav-button {
+        padding: 8px 12px;
+        font-size: 14px;
+        min-width: auto;
+    }
+    
+    .navigation-buttons {
+        justify-content: flex-start;
+        padding: 0 10px;
+    }
+    
+    .top-nav {
+        min-height: auto;
+        padding: 10px 0;
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+}
+
+/* Telefoane mari și tablete mici */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .navigation-buttons {
+        gap: 15px;
+    }
+    
+    .nav-button {
+        width: calc(50% - 20px);
+        text-align: center;
+    }
+    
+    .container {
+        max-width: 90%;
+    }
+}
+
+/* Tablete și laptopuri mici */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 85%;
+    }
+    
+    .nav-button {
+        font-size: 18px;
+    }
+}
+
+/* Laptopuri medii */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .container {
+        max-width: 1000px;
+    }
+    
+    .nav-button {
+        font-size: 20px;
+    }
+}
+
+/* Laptopuri mari și desktop-uri */
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .nav-button {
+        font-size: 22px;
+    }
+    
+    .about-section {
+        padding: 35px;
+    }
+}
+
+/* Ecrane 4K și televizoare */
+@media screen and (min-width: 1921px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .nav-button {
+        font-size: 28px;
+        padding: 25px 50px;
+    }
+    
+    .about-section {
+        padding: 50px;
+    }
+    
+    .about-section h2 {
+        font-size: 3em;
+    }
+    
+    .about-section p {
+        font-size: 1.4em;
+    }
+    
+    .about-section ul li {
+        font-size: 1.3em;
+        padding-left: 35px;
+    }
+}
+
+/* Pentru dispozitive în modul landscape */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+    .top-nav {
+        padding: 10px 0;
+        min-height: 60px;
+    }
+    
+    .content {
+        margin-top: 60px;
+    }
+    
+    .nav-button {
+        padding: 8px 16px;
+    }
+}
+
+/* Pentru dispozitive cu raport de aspect ultra-wide */
+@media screen and (min-aspect-ratio: 21/9) {
+    .container {
+        max-width: 70%;
+    }
+    
+    .navigation-buttons {
+        gap: 40px;
+    }
+}

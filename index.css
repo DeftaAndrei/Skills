@@ -1,0 +1,159 @@
+body {
+    background-color: #f0f0f0;
+    background-image: url('Bucarest.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+       
+.navbar {
+    background-color: #1a237e;  /* albastru închis */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 1000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a {
+    background-color: #42a5f5;  /* albastru deschis pentru butoane */
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    width: 120px;
+    display: inline-block;
+    
+    /* Efecte 3D noi */
+    box-shadow: 0 5px 0 #1565c0, 0 6px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 0;
+    transition: all 0.2s ease;
+    
+    /* Adăugăm animația */
+    animation: dropDown 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Adăugăm întârzieri diferite pentru fiecare buton */
+.navbar a:nth-child(1) { animation-delay: 0.1s; }
+.navbar a:nth-child(2) { animation-delay: 0.2s; }
+.navbar a:nth-child(3) { animation-delay: 0.3s; }
+.navbar a:nth-child(4) { animation-delay: 0.4s; }
+
+/* Definim keyframes pentru animație */
+@keyframes dropDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar a:hover {
+    background-color: #64b5f6;  /* albastru și mai deschis pentru efect hover */
+    color: white;
+    /* Efect de plutire la hover */
+    top: -2px;
+    box-shadow: 0 7px 0 #1565c0, 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a:active {
+    /* Efect de apăsare la click */
+    top: 5px;
+    box-shadow: 0 0 0 #1565c0, 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* Media Queries pentru Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Pentru tablete și telefoane în modul landscape */
+    .navbar {
+        padding: 10px;
+    }
+    
+    .navbar a {
+        width: 90px;
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
+    .content {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Pentru telefoane mobile */
+    .navbar {
+        flex-direction: column;
+        padding: 5px;
+    }
+    
+    .navbar a {
+        width: 80%;
+        margin: 5px auto;
+        font-size: 14px;
+    }
+    
+    .content {
+        margin-top: 200px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* Pentru ecrane mari (desktop și TV) */
+    .navbar {
+        padding: 20px;
+    }
+    
+    .navbar a {
+        width: 150px;
+        font-size: 22px;
+        padding: 12px 25px;
+    }
+    
+    .content {
+        margin-top: 100px;
+        padding: 30px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.about-section {
+    background-color: rgba(240, 240, 240, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-description {
+    line-height: 1.6;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
