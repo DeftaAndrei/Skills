@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Pentru ecrane mai mari */
+@media screen and (min-width: 1200px) {
+    #background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Pentru ecrane și mai mari */
+@media screen and (min-width: 1600px) {
+    #background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Pentru ecrane mici */
+@media screen and (max-width: 768px) {
+    #background-video {
+        width: auto;
+        height: 100vh;
+    }
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #00ff00;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.cybersecurity-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.cybersecurity-content.active {
+    max-height: 2000px;
+    transition: max-height 1s ease-in;
+}
+
+.cybersecurity-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.content-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.button-servicii {
+    /* Dimensiuni mai mari pentru buton */
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    
+    /* Stilizare aspect */
+    background: rgba(0, 0, 0, 0.7); /* Fundal semi-transparent întunecat */
+    border: 2px solid #00ff00; /* Bordură verde neon */
+    color: #00ff00; /* Text verde neon */
+    border-radius: 5px;
+    
+    /* Efecte hover */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stilizare pentru butonul titlului */
+.title-button {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.title-button:hover {
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 15px #00ff00;
+    transform: scale(1.05);
+}
+
+.button-servicii:hover {
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 15px #00ff00;
+    transform: scale(1.05);
+}
+
+.button-servicii::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0, 255, 0, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.button-servicii:hover::before {
+    left: 100%;
+}
